@@ -14,6 +14,13 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
+  void initState(){
+    super.initState();
+    emailController.text == "";
+    passwordController.text = "";
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,10 +58,21 @@ class _LoginScreenState extends State<LoginScreen> {
           const SizedBox(height: 30.0,),
           InkWell(
             onTap: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SignupScreen()),
-              );
+              if (validation() == true) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text("Successfully Signup"),
+                  ),
+                );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SignupScreen()),
+                );
+              } else {
+                const SnackBar(
+                  content: Text('Enter a Password'),
+                );
+              }
             },
             child: Container(
               alignment: Alignment.center,
@@ -89,5 +107,22 @@ class _LoginScreenState extends State<LoginScreen> {
         ],
       ),
     );
+  }
+  bool validation() {
+    if (emailController.text.isEmpty) {
+      const snackBar =  SnackBar(
+        content: Text('Enter a Email'),
+      );
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      return false;
+    }
+    if (passwordController.text.isEmpty) {
+      const snackBar = SnackBar(
+        content: Text('Enter a Password'),
+      );
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      return false;
+    }
+    return true;
   }
 }
