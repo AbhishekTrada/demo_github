@@ -13,11 +13,11 @@ class _SignupScreenState extends State<SignupScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-// void initState(){
-//   super.initState();
-// emailController.text == "";
-// passwordController.text = "";
-// }
+void initState(){
+  super.initState();
+emailController.text == "";
+passwordController.text = "";
+}
 
   @override
   Widget build(BuildContext context) {
