@@ -128,4 +128,5 @@ class _SignupScreenState extends State<SignupScreen> {
     }
     return true;
   }
+
 }
