@@ -13,17 +13,18 @@ class _SignupScreenState extends State<SignupScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-// void initState(){
-//   super.initState();
-// emailController.text == "";
-// passwordController.text = "";
-// }
+  @override
+  void initState() {
+    super.initState();
+    emailController.text == "";
+    passwordController.text = "";
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Signup"),
+        title: const Text("Signup"),
         centerTitle: true,
         elevation: 3.0,
         automaticallyImplyLeading: false,

@@ -23,7 +23,7 @@ class _NewScreenState extends State<NewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Signup"),
+        title: const Text("Signup"),
         centerTitle: true,
         elevation: 3.0,
         automaticallyImplyLeading: false,
