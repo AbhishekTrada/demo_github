@@ -9,7 +9,7 @@ class GameBullz extends StatelessWidget {
       appBar: AppBar(
         title: Text("Flutter Demo"),
       ),
-      body: Text("Flutter Demo"),
+      body: Center(child: Text("Flutter Demo")),
     );
   }
 }
